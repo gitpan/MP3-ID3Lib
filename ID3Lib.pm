@@ -8,7 +8,7 @@ require DynaLoader;
 require AutoLoader;
 
 @ISA = qw(DynaLoader);
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 bootstrap MP3::ID3Lib $VERSION;
 
@@ -192,13 +192,41 @@ At the moment, it is a bit of a low-level interface and some knowledge
 of ID3v2 is useful. You should know about tag names and tag
 usage. The best website for this is http://www.id3.org/.
 
+However, to get started, a few frame names you may find useful are:
+
+=over 4
+
+=item * TIT2: Title/songname/content description
+
+=item * TPE1: Lead performer(s)/Soloist(s) (artist)
+
+=item * TALB: Album/Movie/Show title
+
+=item * TRCK: Track number/Position in set
+
+=item * TYER: Year
+
+=item * TCON: Content type ('genre')
+
+=item * COMM: Comments
+
+=back
+
+Please note that id3v1 has length restrictions on these fields.
+
 =head1 BUGS
 
 The API could be better and there are a couple of small memory leaks.
 
+This module currently only returns the first 100 ASCII characters of a
+text tag.
+
+This module is currently unable to read or write ID3 v2.4.0 tags.
+
 =head1 THANKS
 
-Thanks go to Chris Nandor for letting me use his test MP3s.
+Thanks go to Chris Nandor for letting me use his test MP3s and to Paul
+Mison for the idea.
 
 =head1 AUTHOR
 

@@ -30,11 +30,29 @@ DESCRIPTION
     is useful. You should know about tag names and tag usage. The best
     website for this is http://www.id3.org/.
 
+    However, to get started, a few frame names you may find useful are:
+
+    * TIT2: Title/songname/content description
+    * TPE1: Lead performer(s)/Soloist(s) (artist)
+    * TALB: Album/Movie/Show title
+    * TRCK: Track number/Position in set
+    * TYER: Year
+    * TCON: Content type ('genre')
+    * COMM: Comments
+
+    Please note that id3v1 has length restrictions on these fields.
+
 BUGS
     The API could be better and there are a couple of small memory leaks.
 
+    This module currently only returns the first 100 ASCII characters of a
+    text tag.
+
+    This module is currently unable to read or write ID3 v2.4.0 tags.
+
 THANKS
-    Thanks go to Chris Nandor for letting me use his test MP3s.
+    Thanks go to Chris Nandor for letting me use his test MP3s and to Paul
+    Mison for the idea.
 
 AUTHOR
     Leon Brocard, leon@astray.com
